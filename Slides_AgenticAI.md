@@ -187,21 +187,6 @@ solange es **selbstständig im Loop** wahrnimmt, handelt und nachjustiert. -->
 
 # Multi-Agent In-context Learning
 
-![width:750px](./multi_agent_loop.svg)
-
----
+![width:650px](./multi_agent_loop.svg)
 
 
-<!-- 
-# Kurzdefinition für Studierende
-
-- Agentic AI = ein LLM-basiertes System,
-- das mit **Tools** arbeitet,
-- **Aktionen** ausführt,
-- **Ergebnisse beobachtet**
-- und sein Verhalten **iterativ anpasst**
-
-**Nicht zentral:** Anzahl der LLMs  
-**Zentral:** **Loop + Toolnutzung + selbstständige Ausführung**
-
---- -->
