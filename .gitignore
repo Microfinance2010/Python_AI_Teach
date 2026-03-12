@@ -1,0 +1,19 @@
+# Virtual environments
+.venv/
+.venv_*/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Downloads / large files
+downloads/
