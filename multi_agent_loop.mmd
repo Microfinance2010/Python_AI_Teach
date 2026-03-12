@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant S as Sales LLM
+    participant C as Context (Sales)
+    participant P as Procurement LLM
+
+    Note over S,C: Initialer Kontext:<br/>Ziel = Verkaufen, Ausgangsstrategie
+
+    S->>P: Query 1: "Unser Produkt kostet X€"
+    P-->>S: Response 1: "Zu teuer, kein Interesse"
+
+    Note over C: Context Update:<br/>+ Query 1<br/>+ Response 1<br/>"Preisstrategie hat nicht funktioniert"
+
+    S->>P: Query 2: "Wir bieten 10% Rabatt"
+    P-->>S: Response 2: "Immer noch zu teuer"
+
+    Note over C: Context Update:<br/>+ Query 2<br/>+ Response 2<br/>"Rabatt hat nicht gereicht"
+
+    S->>P: Query 3: "Zusätzlich: kostenloser Support"
+    P-->>S: Response 3: "Interessant, senden Sie Details"
+
+    Note over C: Context Update:<br/>+ Query 3<br/>+ Response 3<br/>"Value-Add Strategie wirkt"
+
+    Note over S,P: Kein Lernprozess im Sinne von<br/>Gewichtsanpassung —<br/>nur Kontextverlängerung

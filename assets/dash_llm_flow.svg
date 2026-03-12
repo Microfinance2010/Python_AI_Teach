@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-label="Architektur Dash und LLM">
+  <defs>
+    <style>
+      .title { font: 700 28px 'Avenir Next', 'Segoe UI', Arial, sans-serif; fill: #102a43; }
+      .label { font: 600 19px 'Avenir Next', 'Segoe UI', Arial, sans-serif; fill: #102a43; }
+      .small { font: 500 15px 'Avenir Next', 'Segoe UI', Arial, sans-serif; fill: #486581; }
+      .core { fill: #e8f4fa; stroke: #0b667a; stroke-width: 2.2; }
+      .model { fill: #eefbf3; stroke: #0f5132; stroke-width: 2; }
+      .data { fill: #fff5e8; stroke: #a35d00; stroke-width: 2; }
+      .out { fill: #f2efff; stroke: #5b3db2; stroke-width: 2; }
+      .arrow { stroke: #486581; stroke-width: 2.4; fill: none; marker-end: url(#arrowHead); }
+    </style>
+    <marker id="arrowHead" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#486581" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="460" fill="#f9fcff"/>
+  <text x="50" y="48" class="title">Dash + LLM Architektur (einfach)</text>
+
+  <rect x="60" y="120" rx="16" ry="16" width="220" height="78" class="core" />
+  <text x="170" y="163" text-anchor="middle" class="label">Nutzer in Dash UI</text>
+
+  <rect x="360" y="120" rx="16" ry="16" width="220" height="78" class="core" />
+  <text x="470" y="163" text-anchor="middle" class="label">App-Logik</text>
+
+  <rect x="670" y="70" rx="16" ry="16" width="220" height="78" class="model" />
+  <text x="780" y="113" text-anchor="middle" class="label">LLM via API</text>
+
+  <rect x="670" y="170" rx="16" ry="16" width="220" height="78" class="model" />
+  <text x="780" y="213" text-anchor="middle" class="label">LLM via Ollama</text>
+
+  <rect x="670" y="270" rx="16" ry="16" width="220" height="78" class="data" />
+  <text x="780" y="313" text-anchor="middle" class="label">Daten/Kennzahlen</text>
+
+  <rect x="950" y="145" rx="16" ry="16" width="200" height="88" class="out" />
+  <text x="1050" y="183" text-anchor="middle" class="label">Antwort +</text>
+  <text x="1050" y="210" text-anchor="middle" class="label">Begruendung</text>
+
+  <line x1="280" y1="159" x2="360" y2="159" class="arrow" />
+  <line x1="580" y1="159" x2="670" y2="109" class="arrow" />
+  <line x1="580" y1="159" x2="670" y2="209" class="arrow" />
+  <line x1="580" y1="159" x2="670" y2="309" class="arrow" />
+
+  <line x1="890" y1="109" x2="950" y2="169" class="arrow" />
+  <line x1="890" y1="209" x2="950" y2="189" class="arrow" />
+  <line x1="890" y1="309" x2="950" y2="209" class="arrow" />
+
+  <path d="M 1050 233 C 900 360, 350 360, 170 210" class="arrow" />
+
+  <text x="58" y="430" class="small">Farben: Blau = Core, Gruen = Modelle, Orange = Daten, Lila = Output</text>
+</svg>
