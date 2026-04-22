@@ -1,0 +1,11 @@
+beautifulsoup4
+ipykernel
+jupyterlab
+pandas
+plotly
+dash
+requests
+
+# Wenn main_api spaeter als eigenes GitHub-Repo veroeffentlicht ist,
+# kann es statt einer lokalen main_api.py so eingebunden werden:
+# git+https://github.com/DEINNAME/main_api.git@v0.1.0

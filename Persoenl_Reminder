@@ -1,0 +1,15 @@
+Die MMD Files werden erstellt in VS Code erstellt und dann mit Mermaid-Code (textbasierte Diagrammsprache) befüllt.
+
+Dann wird es über den Terminal (bzw. Mermaid CLI) gerendert. Bsp.:
+
+mmdc -i multi_agent_loop.mmd -o multi_agent_loop.svg
+
+
+Die Markdown Files können mit Marp exportiert / gerendert werden.
+#
+
+
+Um gezielt in das aktuelle VENV zu installieren:
+
+import sys
+!{sys.executable} -m pip install matplotlib

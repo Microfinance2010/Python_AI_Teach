@@ -3,11 +3,24 @@ marp: true
 theme: default
 paginate: true
 footer: "AI Multiples | Dash + LLM"
-title: "AI Systeme mit Dash"
+title: "AI Anwendungen"
 subtitle: ""
 author: "Beispiel Projekt - Aktienanalyse"
 date: "März 2026"
+
+
+#
+#npx marp --engine ./engine.js slides_AI_Products.md -o slides_AI_Products.html --allow-local-files
+#node inject_mermaid.js slides_AI_Products.html
+# Private-Slides einblenden: --private-display auf flex setzen
+
+
+
 style: |
+	:root {
+		--private-display: none;
+	}
+
 	section {
 		font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
 		font-size: 20px;
@@ -82,12 +95,33 @@ style: |
         color: #f8fbff;
     }
 
+	section.private {
+		/* display: var(--private-display); */
+			display: none !important;
+	}
+
+
+
 ---
 
 
 <!-- _class: lead -->
 
-# Schnelle AI-Apps mit Dash (J. Vogt, 2026)
+# AI Products (J. Vogt, 2026)
+
+### Zielsetzung
+
+- Verständis für einfache Python-Apps mit Dash
+- Grundlegendes Verständnis für RAG
+- Grundlegendes Verständnis für Agents
+
+
+
+
+---
+
+<!-- _class: chapter -->
+# Kapitel 1 - Schnelle AI-Apps mit Dash
 
 ### Zielsetzung
 
@@ -100,12 +134,6 @@ style: |
  - Einbinden von LLMs
  - Systemarchitektur
 
-
-
----
-
-<!-- _class: chapter -->
-# Kapitel 1 - Einführung in Dash
 
 ---
 
@@ -192,7 +220,7 @@ app.run()
 ---
 
 <!-- _class: chapter -->
-# Kapitel 2 - Einbinden von LLMs in Python
+# Kapitel 2 - LLMs und Retrieval Augmented Generation (RAG) in Python
 
 ---
 
@@ -201,15 +229,11 @@ app.run()
 # LLM-Einbindung: Drei Wege (1/2)
 
 ## 1) OpenRouter (API-Hub)
-- **OpenRouter (API-Hub)**
-- Ein API-Key, viele Modelle (z. B. OpenAI, Anthropic, Mistral)
-- Plus: ein Key, viele Modelle, teils gratis (Free-Tier)
-- Minus: je nach Modell/API laufende Kosten, Daten nicht mehr nur lokal
+- Ein API-Key, viele Modelle (z. B. OpenAI, Anthropic, Mistral), teils gratis
+- Minus: je nach Modell laufende Kosten, Daten nicht mehr nur lokal
 
 ## 2) OpenAI (direkt)
- - Direkte Anbindung an GPT-Modelle
-  - Einfaches, stabiles API-Setup für Produktion
-
+ - Einfache und stabilie nbindung an GPT-Modelle
 - Plus: sehr stabile Cloud-API, starke Modelle
 - Minus: kostenpflichtig, Daten nicht mehr nur lokal
 
@@ -228,11 +252,6 @@ app.run()
 
 ---
 
-<!-- _class: chapter -->
-# Kapitel 3 - Architektur 
-
-
----
 
 <!-- _class: small -->
 
@@ -245,7 +264,10 @@ app.run()
 
 ![w:1120](assets/dash_llm_flow.svg)
 
+Als nächstes gehen wir auf die Einbindung konkreter Textinformationen über Retrieval Augmented Generation ein!
+
 ---
+
 <!-- _class: small -->
 
 # RAG kurz erklärt 
@@ -267,10 +289,11 @@ Die Relevanz kann im einfachsten Fall über die Anzahl an Token-Überschneidunge
 2. Relevanteste RAG-Chunks
 3. Möglicherweise weitere relevante Daten.
 4. Instructions (z.B. zur Perspektive, aus der das LLM die Antwort verfassen soll)
+
 ---
 
 
-# Was baut man zuerst?
+# Welche Schritte sollte man beim Entwickeln eines MV- Produkts beachten?
 
 ## MVP-Backlog (nicht-technisch)
 
@@ -304,9 +327,119 @@ Vermeidet Feature-Sammeln in der ersten Version.
 
 ---
 
+<!-- _class: private -->
+
 # Abschluss
 
 ## Nächster Schritt
 
 Bauen Sie als Team in 90 Minuten einen "One-Question-MVP":
 Eine Nutzerfrage, ein Button, eine belastbare Antwort mit Quelle.
+
+
+---
+
+<!-- _class: chapter -->
+# Kapitel 3 - Agentic AI 
+
+
+### Zielsetzung
+
+- Fokus: Begriffliche Einordnung und technische Grundlagen
+- Ergebnis: Sie können den Aufbau einer einfachen agentischen AI-Anwendung erklären und selbst eine App konzipieren.
+
+ ### Content
+
+ - AI Agenten und agentische Systeme
+ - Autonomie
+ - Umsetzung in Python
+
+
+---
+
+
+# AI Agenten
+
+### Definition durch Unterscheidung von "One-Shot"-Abfragen 
+
+- Das System kann **wahrnehmen** (insbesondere über Tools), **handeln** (Tools nutzen), **Ergebnisse beobachten** und **nachsteuern**
+- Kerncharakterisika: Iterationen und Tool-Use 
+
+
+![width:900px](./rReact.svg)
+
+
+---
+
+<!-- _class: small -->
+
+# Rolle von Tools
+
+- Durch Tools kann das System:
+  - Daten abrufen
+  - Programme ausführen
+  - Dateien ändern
+  - APIs ansprechen
+  - Wirkungen in der Umwelt erzeugen
+
+---
+
+<!-- _class: small -->
+
+# Agentische AI Systeme..
+
+- ..bestehen aus mehreren Agenten, die kollaborativ komplexe Ziele verfolgen.
+- Dabei können einzelnen Agenten z.B. koordinieren und andere granularere Arbeitsschritte  ausführen.
+- Grds. ist dabei ein hohes Maß an Autonomie möglich, worauf wir im Folgenden eingehen.
+**Sum-Up:** Neben Iterationen und Tool-Use nun auch Orchestrierung / Zusammenspiel wichtig!
+
+---
+# Rollen der einzelnen Agenten
+
+![width:900px](./orchestration.svg)
+
+---
+<!-- _class: small -->
+
+# Autonomie..
+
+- ..wird oft als zwingendes Charakterisikum von agentischen Workflows beschrieben.
+- ABER: Konkrete Vorgaben zu Feedback-Loops können die Autonomie gegenüber klassischem One-Shot-Prompting in mancher Hinsicht reduzieren—zugunsten einer höheren Auditierbarkeit.
+- Sinnvoll, **Autonomie differenziert zu betrachten** im Hinblick auf
+	- Funktionale Autonomie in einem einzelnen Prozessschritt
+	- Workflow-Autonomie (insb. in Bezug auf Evaluationsschritte) 
+
+- Viel funktionale Autonomie heißt **nicht automatisch** viel Entscheidungsfreiheit. 
+
+---
+# Agentic AI Design Space
+
+![width:750px](./autonomy_plot.svg)
+
+<!-- ---
+
+# Was ist nicht entscheidend?
+
+- **Nicht nötig:** mehrere LLMs
+- **Nicht nötig:** völlige Freiheit des Systems
+- **Nicht nötig:** unkontrolliertes Handeln
+
+Ein System kann **klar begrenzt** sein und trotzdem agentisch arbeiten,  
+solange es **selbstständig im Loop** wahrnimmt, handelt und nachjustiert. -->
+
+---
+
+# Weitere in der Literatur diskutierte Charakteristika sind..
+
+- ..die Lernfähigkeit und ein gemeinsames Gedächtnis eines agentischen Systems.
+- Dabei können auch LLM-Gewichte angepasst werden (z.B. im Falle von Multi-Agent Reinforcement Learning (MARL)).
+- Da das rechenintesiv ist werden aber oft lediglich neue Information / Erfahrungen. gespeichert. 
+- Das kann anderem durch Datenbank-Tools ermöglicht werden. 
+- Besonders wichtig ist aber die sequenzuielle Erweiterung des Kontexts erreicht (In-context Learning (ICL)).
+---
+
+# Multi-Agent In-context Learning
+
+![width:650px](./multi_agent_loop.svg)
+
+

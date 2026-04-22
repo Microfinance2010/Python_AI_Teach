@@ -1,0 +1,11 @@
+beautifulsoup4
+ipykernel
+jupyterlab
+pandas
+plotly
+dash
+requests
+
+# main_api als eigenes GitHub-Paket
+# Nach dem ersten Release-Tag aktivieren:
+git+https://github.com/Microfinance2010/main_api.git@v0.1.0

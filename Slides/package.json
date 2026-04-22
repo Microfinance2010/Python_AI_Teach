@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "npm run build:business-html",
+    "build:business-html": "marp --engine ./engine.js slides_dash_llm_business_students.md -o slides_dash_llm_business_students.html --allow-local-files && node inject_mermaid.js slides_dash_llm_business_students.html",
+    "build:business-pdf": "marp --engine ./engine.js slides_dash_llm_business_students.md -o slides_dash_llm_business_students.pdf --allow-local-files",
+    "build:agenticai-pdf": "marp --engine ./engine.js Slides_AgenticAI.md -o Slides_AgenticAI.pdf --allow-local-files",
+    "watch": "marp --engine ./engine.js slides_dash_llm_business_students.md -o slides_dash_llm_business_students.html --allow-local-files --watch"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.3.1",
+    "@marp-team/marp-core": "^4.3.0",
+    "mermaid": "^11.13.0"
+  }
+}
